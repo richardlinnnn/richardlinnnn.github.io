@@ -24,13 +24,13 @@ title: Illinois Professional Licensing — IS 445
 
 <div class="links">
 <a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/licenses_fall2022.csv" target="_blank" rel="noopener">The Data</a>
-<a href="https://github.com/richardlinnnn/richardlinnnn.github.io/blob/main/analysis.ipynb" target="_blank" rel="noopener">The Analysis</a>
+<a href="https://github.com/richardlinnnn/richardlinnnn.github.io//blob/main/is445-homework/analysis.ipynb" target="_blank" rel="noopener">The Analysis</a>
 </div>
 
 ## Visualization 1: License status composition
 
 <div class="chart-box">
-<iframe src="{{ '/chart1.html' | relative_url }}" title="Stacked bar chart of license status by licensing category" loading="lazy"></iframe>
+<iframe src="{{ '/is445-homework/chart1.html' | relative_url }}" title="Stacked bar chart of license status by licensing category" loading="lazy"></iframe>
 </div>
 
 The first visualization compares how recorded license statuses are distributed across the eight most common license types in this sample. I used a horizontal 100% stacked bar chart because the licensing categories have different numbers of records, and percentages make it easier to compare their composition. The y-axis shows the license type, while the x-axis represents the share of records. I used blue for active, amber for not renewed, and gray for other statuses, so the different groups are easy to recognize without creating too many legend categories. In Python, I trimmed inconsistent text, removed missing categories and statuses, selected the eight most common license types, grouped less common status labels into “Other,” and counted the number of records in each group. These results show patterns in the provided sample, not the current status of every Illinois professional license.
@@ -38,7 +38,7 @@ The first visualization compares how recorded license statuses are distributed a
 ## Visualization 2: Original issue counts over time
 
 <div class="chart-box">
-<iframe src="{{ '/chart2.html' | relative_url }}" title="Interactive line chart of original license issue counts with license type dropdown" loading="lazy"></iframe>
+<iframe src="{{ '/is445-homework/chart2.html' | relative_url }}" title="Interactive line chart of original license issue counts with license type dropdown" loading="lazy"></iframe>
 </div>
 
 The second visualization shows the number of records whose original issue date falls in each year from 1990 through 2022. I chose a line chart because it makes changes over time easier to follow. The x-axis represents the original issue year, and the y-axis represents the number of sampled license records. I used a single blue line rather than different colors for every category, since the plot displays one selected license type at a time. For data preparation, I converted the original issue dates into datetime values, extracted their years, removed invalid dates and years outside the chosen range, and counted records by license type and year. I also calculated a combined series for the eight included types so there is a useful overview when the page first loads.
